@@ -1,0 +1,96 @@
+2024-06-27 13:40:01 - Iniciando execução do script
+2024-06-27 13:40:01 - Parando e removendo contêiner antigo
+No stopped containers
+2024-06-27 13:40:01 - Construindo e iniciando novo contêiner
+Building scraping_sydle_one_2
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 2.04kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:21-alpine
+#2 DONE 0.9s
+
+#3 [internal] load metadata for docker.io/library/php:8.3-fpm-alpine
+#3 DONE 0.9s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [stage-1  1/18] FROM docker.io/library/php:8.3-fpm-alpine@sha256:7c3948e54737d9e4271637639250e63b7f8fd2d58ecf31ac7663985c9ce7263c
+#5 DONE 0.0s
+
+#6 [node 1/1] FROM docker.io/library/node:21-alpine@sha256:78c45726ea205bbe2f23889470f03b46ac988d14b6d813d095e2e9909f586f93
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 transferring context: 18.24MB 0.4s done
+#7 DONE 0.4s
+
+#8 [stage-1 12/18] WORKDIR /var/www
+#8 CACHED
+
+#9 [stage-1  4/18] COPY --from=node /usr/local/include/node /usr/local/include/node
+#9 CACHED
+
+#10 [stage-1  5/18] COPY --from=node /usr/local/share/man/man1/node.1 /usr/local/share/man/man1/node.1
+#10 CACHED
+
+#11 [stage-1  2/18] RUN apk add --no-cache       libstdc++       libgcc       chromium       nss       freetype       harfbuzz       ca-certificates       ttf-freefont       wqy-zenhei       xorg-server       dbus       ttf-dejavu       fontconfig       xvfb       bash
+#11 CACHED
+
+#12 [stage-1  9/18] RUN ln -s /usr/local/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm
+#12 CACHED
+
+#13 [stage-1  8/18] COPY --from=node /opt/ /opt/
+#13 CACHED
+
+#14 [stage-1  6/18] COPY --from=node /usr/local/share/doc/node /usr/local/share/doc/node
+#14 CACHED
+
+#15 [stage-1  7/18] COPY --from=node /usr/local/bin/node /usr/local/bin/node
+#15 CACHED
+
+#16 [stage-1 10/18] RUN ln -s /usr/local/lib/node_modules/npm/bin/npx-cli.js /usr/local/bin/npx
+#16 CACHED
+
+#17 [stage-1 13/18] COPY package.json package-lock.json ./
+#17 CACHED
+
+#18 [stage-1 11/18] RUN ln -s /opt/yarn-$(ls /opt/ | grep yarn | sed 's/yarn-//')/bin/yarn /usr/local/bin/yarnpkg
+#18 CACHED
+
+#19 [stage-1  3/18] COPY --from=node /usr/local/lib/node_modules /usr/local/lib/node_modules
+#19 CACHED
+
+#20 [stage-1 14/18] RUN npm install
+#20 CACHED
+
+#21 [stage-1 15/18] COPY . .
+#21 DONE 0.5s
+
+#22 [stage-1 16/18] RUN mkdir -p /var/www/screenshots
+#22 DONE 0.3s
+
+#23 [stage-1 17/18] COPY start.sh /usr/local/bin/start.sh
+#23 DONE 0.0s
+
+#24 [stage-1 18/18] RUN chmod +x /usr/local/bin/start.sh
+#24 DONE 0.5s
+
+#25 exporting to image
+#25 exporting layers
+#25 exporting layers 0.4s done
+#25 writing image sha256:360f6c25c5366aa76b19bbecf1fac373903b707e0c59269c2e470351e3906b90 done
+#25 naming to docker.io/library/sydle_one_2_scraping_sydle_one_2 done
+#25 DONE 0.4s
+Creating sydle_one_2_scraping_sydle_one_2_1 ... 
+Creating sydle_one_2_scraping_sydle_one_2_1 ... done
+2024-06-27 13:40:06 - Aguardando execução do script no contêiner
+2024-06-27 13:40:36 - Parando e removendo contêiner após execução
+Removing sydle_one_2_scraping_sydle_one_2_1 ... 
+Removing sydle_one_2_scraping_sydle_one_2_1 ... done
+Going to remove sydle_one_2_scraping_sydle_one_2_1
+2024-06-27 13:40:36 - Execução do script finalizada
